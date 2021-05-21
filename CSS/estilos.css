@@ -105,7 +105,7 @@ body{
     width: 70%;
     height: 100%;
     background-color: #101F36;
-    transition: 1.2s;
+    transition: 1s;
 }
 .left{
     left: -75%;
@@ -169,11 +169,18 @@ body{
 }
 .card{
     width: 90%;
-    height: fit-content;
+    height: auto;
     flex-shrink: 0;
     margin-right: 13px;
-    box-shadow: 4px 4px 8px #101F36;
+    box-shadow: 4px 4px 8px #101f36;
     border-radius: 20px;
+    margin-bottom: 40px;
+}
+.card figure{
+    height: 324px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 .card a{
     text-decoration: none;
@@ -279,6 +286,7 @@ body{
 }
 .tarject_figure img{
     border-radius: inherit;
+    height: inherit;
 }
 .tarject_contenido{
     background: #101F36;
@@ -288,6 +296,8 @@ body{
     font-weight: bold;
     text-align: center;
 }
-.tarject_contenido p{
+.tarject_contenido p,
+.tarject_contenido .precio{
+    display: inline-block;
     margin-bottom: 20px;
 }
