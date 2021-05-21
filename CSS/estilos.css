@@ -48,6 +48,11 @@ body{
     background-image: url(../imagenes/padlock.svg);
     background-size: 16px;
 }
+.formulario .lupa{
+    background-image: url(../imagenes/magnifyingGlassSkiblue.svg);
+    background-size: 16px;
+    
+}
 .formulario input::placeholder{
     color: #39B6E8;
 }
@@ -141,21 +146,32 @@ body{
     padding: 20px 30px;
     font-size: 0.9em;
 }
+.secundario{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.secundario p span{
+    display: inline-block;
+    width: 100%;
+}
 .titulo h1{
     margin-bottom: 10px;
 }
-/*Banner*/
+
 .main{
     width: 100%;
-    height: 400px;
+    height: 450px;
     display: flex;
+    margin-top: 10px;
     flex: 1;
 	overflow: auto;
 }
 .card{
-    width: 80%;
+    width: 90%;
+    height: fit-content;
     flex-shrink: 0;
-    margin: auto 13px;
+    margin-right: 13px;
     box-shadow: 4px 4px 8px #101F36;
     border-radius: 20px;
 }
@@ -164,7 +180,7 @@ body{
     color: white;
 }
 .aside{
-    margin: 40px auto;
+    margin: 0px auto 15px;
     height: 300px;
 }
 .aside figure{
@@ -240,4 +256,38 @@ body{
     margin: 10px var(--margin);
     color: white;
     font-size: 0.9em;
+}
+
+/* =============================================== TELEVISORES ============================================== */
+
+.main_pages{
+    width: var(--width);
+    margin: var(--margin);
+}
+.tarjet{
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 4px 4px 20px #101F36;
+    box-shadow: none;
+    
+}
+.tarject_figure{
+    border: 1px solid #000000;
+    border-radius: 20px 20px 0 0;
+}
+.tarject_figure img{
+    border-radius: inherit;
+}
+.tarject_contenido{
+    background: #101F36;
+    border-radius: 0 0 20px 20px;
+    color: #ffffff;
+    padding: 30px 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.tarject_contenido p{
+    margin-bottom: 20px;
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/logo.png"> 
+    <title>Televisores</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+    <header class="header">
+        <figure class="header__menu">
+            <img src="imagenes/menu.svg" alt="Menu" id="menu__movil">
+        </figure>
+        <figure class="header__logo">
+            <a href="index.html">
+                <img src="imagenes/logo.png" alt="Logo">
+            </a>
+        </figure>
+    </header>
+    <nav class="navegacion left" id="navegacion">
+        <ul>
+            <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.html" class="link">Inicio</a></li>
+            <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.html" class="link">Televisores</a></li>
+            <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.html" class="link">Audio</a></li>
+            <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.html" class="link">Computo</a></li>
+            <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.html" class="link">Electrohogar</a></li>
+            <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
+        </ul>
+    </nav>
+    <section class="banner">
+        <figure>
+            <img src="imagenes/banneropcional.webp" alt="Banner">
+        </figure>
+        <div class="titulo secundario">
+            <p><span>No te pierdas de nada</span> El televisor que quieras lo encuentras en Danis</p>
+            <form action="buscar_producto.php" class="formulario">
+                <input type="text" class="lupa" placeholder="Buscar">
+                <button class="boton">Buscar</button>
+            </form>
+        </div>
+    </section>
+    <main class="main_pages">
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="imagenes/televisor.jpg" alt="Audio">
+            </figure>
+            <div class="tarject_contenido">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
+            </div>
+        </article>
+
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="imagenes/televisor.jpg" alt="Audio">
+            </figure>
+            <div class="tarject_contenido">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
+            </div>
+        </article>
+
+       
+    </main>
+    <aside class="aside">
+        <figure>
+            <img src="imagenes/aside.jpg" alt="Aside">
+        </figure>
+    </aside>
+    <div class="contacto">
+        <h3>Suscribete para estar al tanto de nuevos productos</h3>
+        <form action="suscripcion.php">
+            <input type="email" placeholder="Correo">
+            <button class="boton">Enviar</button>
+        </form>
+        <div class="redes">
+            <a href="http://facebbok.danielbustillos.com" class="facebook"></a>
+            <a href="twitter.com" class="twitter"></a>
+            <a href="instagram.dani.com" class="instagram"></a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
+    </footer>
+    <script src="JS/app.js"></script>
+</body>
+</html>
