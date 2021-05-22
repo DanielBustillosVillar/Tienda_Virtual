@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagenes/logo.png"> 
-    <title>Inicio</title>
+    <title>Electrohogar</title>
     <link rel="stylesheet" href="CSS/estilos.css">
 </head>
 <body>
@@ -29,55 +29,69 @@
             <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
         </ul>
     </nav>
-    <section class="banner" id="banner">
-        <figure id="banner_contenido">
-            <img src="imagenes/banner_movil.jpg" alt="Banner">
-            <img src="imagenes/banner_01.jpg" alt="Banner">
-            <img src="imagenes/banner_02.jpg" alt="Banner">
-            <img src="imagenes/banner_03.jpg" alt="Banner">
-            <img src="imagenes/banner_04.jpg" alt="Banner">
-            <img src="imagenes/banner_05.jpg" alt="Banner">
-            <img src="imagenes/banner_06.jpg" alt="Banner">
+    <section class="banner">
+        <figure>
+            <img src="imagenes/banner_electrodomesticos01.jpg" alt="Banner">
         </figure>
-        <div class="titulo">
-            <h1>Electro Domesticos Dani</h1>
-            <p>Su mejor decisión en electrodomesticos. Televisores, equipos de audio, laptops, impresoras, computadoras, electrodomesticos para el hogar, entre muchos más.</p>
+        <div class="titulo secundario">
+            <p><span>No te pierdas de nada</span>Todo electrodomestico lo encuentras en Danis</p>
+            <form action="buscar_producto.php" class="formulario">
+                <input type="text" class="lupa" placeholder="Buscar">
+                <button class="boton">Buscar</button>
+            </form>
         </div>
     </section>
-    <main class="main">
-        <article class="card">
-            <figure>
-                <img src="imagenes/televisor.jpg" alt="Televisores">
+    <main class="main_pages">
+<!-- TARJETA 1 -->
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="imagenes/electrodomesticos_01.jpg" alt="Audio">
             </figure>
-            <button class="boton"><a href="televisores.html">Televisores</a></button>
+            <div class="tarject_contenido">
+                <p>BATIDORA DE PEDESTAL THOMAS TH870P 2 EN 1</p>
+                <span class="precio">S/ 229.00</span>
+                <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
+            </div>
         </article>
-
-        <article class="card">
-            <figure>
-                <img src="imagenes/audio.jpg" alt="Audio">
+<!--TARJETA 2  -->
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="imagenes/electrodomesticos_02.jpg" alt="Televisor">
             </figure>
-            <button class="boton"><a href="audio.html">Audio</a></button>
+            <div class="tarject_contenido">
+                <p>LICUADORA TAURUS 2 VELOCIDADES TJB 1300 1.5LT</p>
+                <span class="precio">S/ 119.00</span>
+                <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
+            </div>
         </article>
-
-        <article class="card">
-            <figure>
-                <img src="imagenes/computo.jpg" alt="Computo">
+<!-- TARJETA 3 -->
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="imagenes/electrodomesticos_03.jpg" alt="Televisor">
             </figure>
-            <button class="boton"><a href="computo.html">Computo</a></button>
+            <div class="tarject_contenido">
+                <p>COCINA INDURAMA GRANADA P 4 HORNILLAS</p>
+                <span class="precio">S/ 999.00</span>
+                
+                <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
+            </div>
         </article>
-
-        <article class="card">
-            <figure>
-                <img src="imagenes/electrodomesticos.jpg" alt="Electrodomesticos">
+<!-- TARJETA 4 -->
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="imagenes/electrodomesticos_04.jpg" alt="Televisor">
             </figure>
-            <button class="boton"><a href="electrohogar.html">Electrohogar</a></button>
+            <div class="tarject_contenido">
+                <p>LAVADORA SAMSUNG ECO INVERTER WA17T6260BY/PE 17 KG</p>
+                <span class="precio">S/ 1,349.00</span>
+                
+                <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
+            </div>
         </article>
-
-       
     </main>
     <aside class="aside">
         <figure>
-            <img src="imagenes/aside.jpg" alt="Aside">
+            <img src="imagenes/aside_04.jpg" alt="Aside">
         </figure>
     </aside>
     <div class="contacto">
