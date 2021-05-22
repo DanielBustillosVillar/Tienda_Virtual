@@ -16,6 +16,9 @@ img {
 body{
     margin: 0;
 }
+.fondo{
+    background-color: #101F36;
+}
 
 .login_logo{
     height: 45%;
@@ -191,6 +194,14 @@ body{
         font-size: 1em;
     }
 }
+@media (min-width: 1024px){
+    .banner{
+        height: 550px;
+    }
+    .titulo{
+        top: 380px;
+    }
+}
 /* ========================= MAIN ======================= */
 .main{
     width: 100%;
@@ -235,6 +246,11 @@ body{
         width: 70%;
     }
 }
+@media (min-width: 1024px){
+    .card{
+        width: 45%;
+    }
+}
 /* ========================= ASIDE =========================== */
 .aside{
     margin: 0px auto 15px;
@@ -249,6 +265,11 @@ body{
 @media (min-width: 720px){
     .aside{
         height: 400px;
+    }
+}
+@media (min-width: 1024px){
+    .aside{
+        height: 500px;
     }
 }
 /* ================================= CONTACTO =========================== */
