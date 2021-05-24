@@ -10,28 +10,29 @@
 </head>
 <body>
     <header class="header">
+        
         <figure class="header__menu">
             <img src="imagenes/menu.svg" alt="Menu" id="menu__movil">
-        </figure>
-        <figure class="header__menu">
-            <img src="imagenes/shopping_cart.svg" alt="Carrito de compras">
         </figure>
         <figure class="header__logo">
             <a href="index.html">
                 <img src="imagenes/logo.png" alt="Logo">
             </a>
         </figure>
+        <figure class="header__logo">
+            <img src="imagenes/shopping_cart.svg" alt="Carrito de compras">
+        </figure>
+        <nav class="navegacion left" id="navegacion">
+            <ul>
+                <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.html" class="link">Inicio</a></li>
+                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.html" class="link">Televisores</a></li>
+                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.html" class="link">Audio</a></li>
+                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.html" class="link">Computo</a></li>
+                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.html" class="link">Electrohogar</a></li>
+                <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav class="navegacion left" id="navegacion">
-        <ul>
-            <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.html" class="link">Inicio</a></li>
-            <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.html" class="link">Televisores</a></li>
-            <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.html" class="link">Audio</a></li>
-            <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.html" class="link">Computo</a></li>
-            <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.html" class="link">Electrohogar</a></li>
-            <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
-        </ul>
-    </nav>
     <section class="banner">
         <figure id="banner_contenido">
             <img src="imagenes/banner_tv.jpg" alt="Banner">
@@ -96,15 +97,16 @@
                 <button class="boton"><a href="televisores.html">Agregar al carrito</a></button>
             </div>
         </article>
+        
     </main>
-    <aside class="aside">
+    <aside class="aside none">
         <figure>
             <img src="imagenes/aside_02.jpg" alt="Aside">
         </figure>
     </aside>
     <div class="contacto">
-        <h3>Suscribete para estar al tanto de nuevos productos</h3>
         <form action="suscripcion.php">
+            <h3>Suscribete para estar al tanto de nuevos productos</h3>
             <input type="email" placeholder="Correo">
             <button class="boton">Enviar</button>
         </form>
