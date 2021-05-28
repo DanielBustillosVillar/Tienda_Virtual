@@ -125,6 +125,7 @@ body{
     width: 50%;
     justify-content: flex-end;
     margin-right: var(--margin);
+    cursor: pointer;
 }
 .header__logo img{
     height: 90%;
@@ -557,5 +558,73 @@ body{
     .tarject_figure,
     .tarject_contenido{
         height: 50%;
+    }
+}
+
+/* ====================================== CARRITO ===================================================== */
+
+.compras table{
+    width: 100%;
+    padding: 15px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.table_thead tr th{
+    padding: 10px 0;
+}
+.table_tbody tr{
+    border-bottom: 1px solid #9a9da18c;
+}
+.table_thead{
+    border-bottom: 1px solid #9a9da18c;
+}
+
+.quitar{
+    background: red;
+    color: #ffffff;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.quitar:hover{
+    background: #d10000;
+}
+.compras{
+    display: none;
+}
+.ver-compras{
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 100;
+    top: 45px;
+}
+.image_compras{
+    width: 40px;
+}
+@media (min-width: 720px){
+    .ver-compras{
+        width: 80%;
+        right: 5%;
+        padding: 10px 50px;
+    }
+    .image_compras{
+        width: 100px;
+    }
+}
+@media (min-width: 1024px){
+    .ver-compras{
+        width: 45%;
+        top: 60px;
+        left: 5%;
+        padding: 10px 50px;
+    }
+    .image_compras{
+        width: 150px;
     }
 }
