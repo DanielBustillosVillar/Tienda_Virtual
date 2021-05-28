@@ -31,7 +31,7 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
-.formulario input{
+.formulario input, .form_productos label{
     background-repeat: no-repeat;
     background-size: 23px;
     background-color: transparent;
@@ -390,7 +390,9 @@ body{
     text-align: center;
     align-items: center;
 }
-.contacto form input{
+.contacto form input,
+.contacto form label,
+.contacto form select{
     background-image: url(../imagenes/email.svg);
     background-size: 23px;
     background-repeat: no-repeat;
@@ -627,4 +629,94 @@ body{
     .image_compras{
         width: 150px;
     }
+}
+
+/* ============================================= FORMULARIO INGRESAR PRODUCTOS ============================ */
+.div_Formulario{
+    background-color: #ffffff;
+}
+.form_productos{
+    margin-top: 45px;
+}
+.div_Formulario .form_productos input,
+.div_Formulario .form_productos label,
+.div_Formulario .form_productos select
+{
+    background-image: none;
+    padding: 10px 15px;
+    text-align: initial;
+}
+.form_productos input[type="file"]{
+    display: none;
+}
+.form_productos h2{
+    margin: 15px auto;
+    color: #101f36;
+    font-size: 1.3em;
+}
+.productos{
+    display: block;
+    text-align: center;
+}
+.productos table{
+    margin-bottom: 20px;
+}
+.productos h2{
+    color: #101F36;
+    margin-bottom: 15px;
+}
+@media (min-width: 720px){
+    .div_Formulario{
+        margin-top: 60px;
+    }
+    .form_productos input{
+        width: 10%;
+    }
+}
+@media (min-width: 1024px){
+    
+    .div_Formulario .form_productos{
+        display: flex;
+        width: 100%;
+    }
+}
+
+
+/* ======================================== VISUALIZAR PRODUCTOS ============================================= */
+
+.buscador{
+    margin-top: 45px;
+    background: #101F36;
+
+}
+.buscador p{
+    text-align: center;
+    color: #ffffff;
+    padding-top: 20px;
+    font-weight: bold;
+}
+.btn_delete{
+    background: rgb(214, 33, 33);
+}
+.btn_delete:hover{
+    background: rgb(179, 0, 0);
+}
+.visualizar_figure p{
+    display: block;
+    margin-bottom: 10px;
+    color: aqua;
+}
+.visualizar_figure p span{
+    display: block;
+    color: #ffffff;
+}
+@media (min-width: 1024px){
+    
+    .visualizar{
+        height: 930px;
+    }
+    .visualizar_figure{
+        height: 65%;
+    }
+
 }

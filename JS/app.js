@@ -7,10 +7,12 @@ let sliderImg = document.querySelectorAll('#banner_contenido img')
 let sliderImgLast = sliderImg[sliderImg.length - 1]
 
 
-slider.insertAdjacentElement('afterbegin', sliderImgLast)
 /* =================== EVENTOS ============================= */
 
 menu__movil.addEventListener('click', salirMenu)
+
+
+slider.insertAdjacentElement('afterbegin', sliderImgLast)
 /* =================== SLIDER =================== */
 window.addEventListener('load', mover)
 
