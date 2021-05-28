@@ -710,6 +710,19 @@ body{
     display: block;
     color: #ffffff;
 }
+.mg-b{
+    margin-bottom: 20px;
+}
+
+.alerta{
+    display: block;
+    text-align: center;
+    width: 300px;
+    color: #fff;
+    margin: 15px auto;
+    padding: 10px 40px;
+    font-size: 15px;
+}
 @media (min-width: 1024px){
     
     .visualizar{

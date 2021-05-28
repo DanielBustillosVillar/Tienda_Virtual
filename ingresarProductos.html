@@ -34,7 +34,7 @@
         </nav>
     </header>
     <div class="div_Formulario contacto">
-        <form class="formulario form_productos">
+        <form class="formulario form_productos" id="formulario">
             <h2>Ingresar Productos</h2>
             <input type="text" placeholder="Ingrese codigo del producto">
             <input type="text" placeholder="Ingrese nombre del producto">
@@ -50,8 +50,10 @@
               </select>
             <label for="imagen_producto">Elegir imagen del producto</label>
             <input type="file" id="imagen_producto" placeholder="Ingrese imagen del producto">
-            <button class="boton">Registrar producto</button>
+            <button class="boton mg-b" id="boton">Registrar producto</button>
         </form>
+    </div>
+    <div id="alerta">
     </div>
     <div class="compras productos" id="compras">
         <h2>Ultimos productos ingresados</h2>
@@ -79,5 +81,6 @@
         <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
     </footer>
     <script src="JS/app.js"></script>
+    <script src="JS/validarFormulario.js"></script>
 </body>
 </html>
