@@ -19,7 +19,12 @@ body{
 .fondo{
     background-color: #101F36;
 }
-
+.red{
+    background: #d82323;
+}
+.green{
+    background: #23d83b;
+}
 .login_logo{
     height: 45%;
     margin: 10px 50px;

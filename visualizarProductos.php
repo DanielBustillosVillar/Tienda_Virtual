@@ -1,3 +1,6 @@
+<?php
+	require_once "PHP/consultar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +55,13 @@
     
     <div class="buscador">
         <p>Buscar producto</p>
-        <form action="buscar_producto.php" class="formulario">
-            <input type="text" class="lupa" placeholder="Buscar">
-            <button class="boton">Buscar</button>
+        <form class="formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" id="submit">
+            <input type="text" name="nombreProducto" id="nombreProducto" class="lupa" placeholder="Buscar">
+            <button class="boton" name="submit" id="busqueda">Buscar</button>
         </form>
+    </div>
+    <div id="alerta" class="<?php echo $color;?> <?php echo $clase ?>">
+    <p><?php echo $mensaje ?></p>
     </div>
     <main class="main_pages" id="productos">
 <!-- TARJETA 1 -->
@@ -110,6 +116,26 @@
                 <button class="boton btn_delete" data-id="E1">Eliminar</button>
             </div>
         </article>
+        
+        <?php while ($filas = mysqli_fetch_assoc($resultado)) {
+		# code...
+		?>
+        <article class="tarjet card visualizar">
+            <figure class="tarject_figure visualizar_figure">
+                <img src="<?php echo $filas['imagen']; ?>" alt="Audio">
+            </figure>
+            <div class="tarject_contenido visualizar_figure">
+                <p>Codigo <span><?php echo $filas['idProducto']; ?></span></p>
+                <p>Nombre <span><?php echo $filas['nombre']; ?></span></p>
+                <p>Precio <span><?php echo $filas['precio']; ?></span></p>
+                <p>Cantidad <span><?php echo $filas['cantidad']; ?></span></p>
+                <p>Descripcion <span><?php echo $filas['descripcion']; ?></span></p>
+                <p>Categoria <span><?php echo $filas['categoria']; ?></span></p>
+                <button class="boton" data-id="<?php echo $filas['idProducto']; ?>">Modificar</button>
+                <button class="boton btn_delete" data-id="<?php echo $filas['idProducto']; ?>">Eliminar</button>
+            </div>
+        </article>
+        <?php } ?>
     </main>
     <aside class="aside">
         <figure>

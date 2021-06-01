@@ -13,9 +13,10 @@
         $nombre_archivo = basename($_FILES["imagen"]["name"]);
         $nombre_imagen = date("m-d-y"). "-" . date("H-i-s"). "-" .$nombre_archivo;
         $ruta = "../imagenes/".$nombre_imagen;
+        $src = "imagenes/".$nombre_imagen;
         $subirarchivo = move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
         if($subirarchivo){
-            $insertar = "INSERT INTO productos (idProducto, nombre, precio, cantidad, descripcion, categoria, imagen) VALUES ('$codigo', '$nombre', '$precio', '$cantidad', '$descripcion', '$categoria', '$ruta')";
+            $insertar = "INSERT INTO productos (idProducto, nombre, precio, cantidad, descripcion, categoria, imagen) VALUES ('$codigo', '$nombre', '$precio', '$cantidad', '$descripcion', '$categoria', '$src')";
         }else{
             echo json_encode('Error subir archivo');
         }
