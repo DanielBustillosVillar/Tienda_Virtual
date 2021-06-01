@@ -36,20 +36,20 @@
     <div class="div_Formulario contacto">
         <form class="formulario form_productos" id="formulario">
             <h2>Ingresar Productos</h2>
-            <input type="text" placeholder="Ingrese codigo del producto">
-            <input type="text" placeholder="Ingrese nombre del producto">
-            <input type="text" placeholder="Ingrese precio del producto">
-            <input type="number" placeholder="Ingrese cantidad del producto">
-            <input type="text" placeholder="Ingrese descripcion del producto">
+            <input type="text" name="codigo" placeholder="Ingrese codigo del producto">
+            <input type="text" name="nombre" placeholder="Ingrese nombre del producto">
+            <input type="text" name="precio" placeholder="Ingrese precio del producto">
+            <input type="number" name="cantidad" placeholder="Ingrese cantidad del producto">
+            <input type="text" name="descripcion" placeholder="Ingrese descripcion del producto">
             <select name="categoria" id="categoria">
                 <option selected hidden>Seleccione una categoria</option>
                 <option value="television">Televisión</option>
                 <option value="audio">Audio</option>
                 <option value="computo">Computo</option>
                 <option value="electrohogar">Electrohogar</option>
-              </select>
+            </select>
             <label for="imagen_producto">Elegir imagen del producto</label>
-            <input type="file" id="imagen_producto" placeholder="Ingrese imagen del producto">
+            <input type="file" name="imagen" id="imagen_producto" placeholder="Ingrese imagen del producto">
             <button class="boton mg-b" id="boton">Registrar producto</button>
         </form>
     </div>

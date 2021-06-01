@@ -14,13 +14,8 @@ function validarFormulario(e){
         return 
     }else{
         let dato = new FormData(formulario)
-        dato.get('idUsuario')
-        dato.get('Nombres')
-        dato.get('Apellidos')
-        dato.get('Direccion')
-        dato.get('Usuario')
-        dato.get('Clave')
-        fetch('registrar.php', {
+
+        fetch('./PHP/registrar.php', {
             method: 'POST',
             body: dato
         })
