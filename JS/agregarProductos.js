@@ -38,8 +38,8 @@ function mostrarCompras(){
 }
 
 function agregar_compra(e){
-    e.preventDefault()
-    if(e.target.classList.contains('boton')){
+    if(e.target.classList.contains('agregarPro')){
+        e.preventDefault()
         const informacion = e.target.parentElement.parentElement
         guardar_datos(informacion)
     }

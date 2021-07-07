@@ -1,3 +1,7 @@
+<?php
+	require_once "PHP/consultar.php";
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +28,22 @@
         </figure>
         <nav class="navegacion left" id="navegacion">
             <ul>
-                <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.html" class="link">Inicio</a></li>
-                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.html" class="link">Televisores</a></li>
-                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.html" class="link">Audio</a></li>
-                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.html" class="link">Computo</a></li>
-                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.html" class="link">Electrohogar</a></li>
-                <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
+                <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.php" class="link">Inicio</a></li>
+                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.php" class="link">Televisores</a></li>
+                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.php" class="link">Audio</a></li>
+                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.php" class="link">Computo</a></li>
+                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.php" class="link">Electrohogar</a></li>
+                <?php 
+                if(!isset($_SESSION['admin'])){
+                ?><li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.php" class="link">Ingresar</a></li>
+                <?php
+                }else{
+                    ?> <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="administrador.html" class="link">Administrar</a></li>
+                    <li><img src="imagenes/user.svg" alt="Salir" class="navegacion__icono"><a href="PHP/salir.php" class="link">Salir</a></li>
+
+                    <?php
+                }
+                ?>
             </ul>
         </nav>
     </header>
@@ -60,12 +74,15 @@
         </figure>
         <div class="titulo secundario">
             <p><span>No te pierdas de nada</span> El televisor que quieras lo encuentras en Danis</p>
-            <form action="buscar_producto.php" class="formulario">
-                <input type="text" class="lupa" placeholder="Buscar">
-                <button class="boton">Buscar</button>
+            <form class="formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" id="submit">
+                <input type="text" name="nombreProducto" id="nombreProducto" class="lupa" placeholder="Buscar">
+                <button class="boton" name="productos" id="busqueda">Buscar</button>
             </form>
         </div>
     </section>
+    <div id="alerta" class="<?php echo $color;?> <?php echo $clase ?>">
+        <p><?php echo $mensajes ?></p>
+    </div>
     <main class="main_pages" id="productos">
 <!-- TARJETA 1 -->
         <article class="tarjet card">
@@ -75,7 +92,7 @@
             <div class="tarject_contenido">
                 <p>TV LG 49" 4K ULTRA HD SMART TV THINQ AI  49UN7100 </p>
                 <span class="precio">S/ 1,499.00</span>
-                <button class="boton" data-id="T1">Agregar al carrito</button>
+                <button class="boton agregarPro" data-id="T1">Agregar al carrito</button>
             </div>
         </article>
 <!--TARJETA 2  -->
@@ -86,7 +103,7 @@
             <div class="tarject_contenido">
                 <p>TV SAMSUNG 55" CRYSTAL ULTRA HD SMART TV 55TU8500G</p>
                 <span class="precio">S/ 2,099.00</span>
-                <button class="boton" data-id="T2">Agregar al carrito</button>
+                <button class="boton agregarPro" data-id="T2">Agregar al carrito</button>
             </div>
         </article>
 <!-- TARJETA 3 -->
@@ -97,7 +114,7 @@
             <div class="tarject_contenido">
                 <p>TV XIAOMI 55" ULTRA HD SMART TV MI LED 4S</p>
                 <span class="precio">S/ 1,899.00</span>
-                <button class="boton" data-id="T3">Agregar al carrito</button>
+                <button class="boton agregarPro" data-id="T3">Agregar al carrito</button>
             </div>
         </article>
 <!-- TARJETA 4 -->
@@ -108,9 +125,23 @@
             <div class="tarject_contenido">
                 <p>TV SAMSUNG QLED 65" 4K UHD SMART QN65Q800TAGXPE</p>
                 <span class="precio">S/ 10,999.00</span>
-                <button class="boton" data-id="T4">Agregar al carrito</button>
+                <button class="boton agregarPro" data-id="T4">Agregar al carrito</button>
             </div>
         </article>
+        <?php while ($filas = mysqli_fetch_assoc($resultado)) {
+        # code...
+        ?>
+        <article class="tarjet card">
+            <figure class="tarject_figure">
+                <img src="<?php echo $filas['imagen']; ?>" alt="<?php echo $filas['categoria']; ?>">
+            </figure>
+            <div class="tarject_contenido">
+                <p><?php echo $filas['nombre']; ?></p>
+                <span class="precio">S/ <?php echo $filas['precio']; ?></span>
+                <button class="boton agregarPro" data-id="<?php echo $filas['idProducto']; ?>">Agregar al carrito</button>
+            </div>
+        </article>
+        <?php } ?>
         
     </main>
     <aside class="aside none">
@@ -133,6 +164,7 @@
     <footer class="footer">
         <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
     </footer>
+    <script src="JS/menu.js"></script>
     <script src="JS/app.js"></script>
     <script src="JS/agregarProductos.js"></script>
 </body>

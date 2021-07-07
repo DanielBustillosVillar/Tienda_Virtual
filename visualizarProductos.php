@@ -1,5 +1,6 @@
 <?php
 	require_once "PHP/consultar.php";
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +28,22 @@
         </figure>
         <nav class="navegacion left" id="navegacion">
             <ul>
-                <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.html" class="link">Inicio</a></li>
-                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.html" class="link">Televisores</a></li>
-                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.html" class="link">Audio</a></li>
-                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.html" class="link">Computo</a></li>
-                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.html" class="link">Electrohogar</a></li>
-                <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
+                <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.php" class="link">Inicio</a></li>
+                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.php" class="link">Televisores</a></li>
+                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.php" class="link">Audio</a></li>
+                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.php" class="link">Computo</a></li>
+                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.php" class="link">Electrohogar</a></li>
+                <?php 
+                if(!isset($_SESSION['admin'])){
+                ?><li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.php" class="link">Ingresar</a></li>
+                <?php
+                }else{
+                    ?> <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="administrador.html" class="link">Administrar</a></li>
+                    <li><img src="imagenes/user.svg" alt="Salir" class="navegacion__icono"><a href="PHP/salir.php" class="link">Salir</a></li>
+
+                    <?php
+                }
+                ?>
             </ul>
         </nav>
     </header>
@@ -57,11 +68,11 @@
         <p>Buscar producto</p>
         <form class="formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" id="submit">
             <input type="text" name="nombreProducto" id="nombreProducto" class="lupa" placeholder="Buscar">
-            <button class="boton" name="submit" id="busqueda">Buscar</button>
+            <button class="boton" name="productos" id="busqueda">Buscar</button>
         </form>
     </div>
     <div id="alerta" class="<?php echo $color;?> <?php echo $clase ?>">
-    <p><?php echo $mensaje ?></p>
+    <p><?php echo $mensajes ?></p>
     </div>
     <main class="main_pages" id="productos">
 <!-- TARJETA 1 -->
@@ -122,7 +133,7 @@
 		?>
         <article class="tarjet card visualizar">
             <figure class="tarject_figure visualizar_figure">
-                <img src="<?php echo $filas['imagen']; ?>" alt="Audio">
+                <img src="<?php echo $filas['imagen']; ?>" alt="<?php echo $filas['categoria']; ?>">
             </figure>
             <div class="tarject_contenido visualizar_figure">
                 <p>Codigo <span><?php echo $filas['idProducto']; ?></span></p>
@@ -157,6 +168,7 @@
     <footer class="footer">
         <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
     </footer>
+    <script src="JS/menu.js"></script>
     <script src="JS/app.js"></script>
     <script src="JS/agregarProductos.js"></script>
 </body>

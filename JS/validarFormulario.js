@@ -1,10 +1,13 @@
-
 const inputs = document.querySelectorAll('#formulario input')
 const alerta = document.querySelector("#alerta")
 const boton = document.querySelector('#boton')
+const login = document.querySelector('#login')
 
-boton.addEventListener('click', validarFormulario)
-
+if(login != null){
+    login.addEventListener('click', validarLogin)
+}else if(boton != null){
+    boton.addEventListener('click', validarFormulario)
+}
 function validarFormulario(e){
     e.preventDefault()
     let i = 0
@@ -28,8 +31,32 @@ function validarFormulario(e){
     }
     
 }
+function validarLogin(e){
+    e.preventDefault()
 
+    if(inputs[0].value === '' || inputs[1].value === ''){
+        mostrarAlerta('Complete todos los campos', 0)
+        return 
+    }else{
+        let dato = new FormData(formulario)
+
+        fetch('./PHP/registrar.php', {
+            method: 'POST',
+            body: dato
+        })
+            .then(function(respuesta){
+                respuesta.json().then(function(data){
+                    mostrarAlerta(data)
+                })
+            })
+        formulario.reset()
+    }
+}
 function mostrarAlerta(mensaje, tipo){
+        if(mensaje == 'Bienvenido'){
+            alert('Bienvenido')
+            window.location.href = 'audio.php'
+        }
         if(alerta.classList.contains('alerta')){
 
         }else{

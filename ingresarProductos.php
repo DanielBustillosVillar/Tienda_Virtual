@@ -1,3 +1,11 @@
+<?php 
+	require_once "PHP/consultar.php";
+	$con = conectar();
+	$sentencia = "SELECT * FROM `productos`";
+	$resultado = mysqli_query($con,$sentencia);
+	mysqli_close($con);
+    $archivo_actual = basename($_SERVER['PHP_SELF']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,10 +33,10 @@
         <nav class="navegacion left" id="navegacion">
             <ul>
                 <li><img src="imagenes/home.svg" alt="Inicio" class="navegacion__icono"><a href="index.html" class="link">Inicio</a></li>
-                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.html" class="link">Televisores</a></li>
-                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.html" class="link">Audio</a></li>
-                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.html" class="link">Computo</a></li>
-                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.html" class="link">Electrohogar</a></li>
+                <li><img src="imagenes/television.svg" alt="Television" class="navegacion__icono"><a href="televisores.php" class="link">Televisores</a></li>
+                <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.php" class="link">Audio</a></li>
+                <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.php" class="link">Computo</a></li>
+                <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.php" class="link">Electrohogar</a></li>
                 <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
             </ul>
         </nav>
@@ -36,7 +44,8 @@
     <div class="div_Formulario contacto">
         <form class="formulario form_productos" id="formulario">
             <h2>Ingresar Productos</h2>
-            <input type="text" name="codigo" placeholder="Ingrese codigo del producto">
+            <input type="hidden" name="archivo_actual" value="<?php echo $archivo_actual; ?>">
+            <input type="number" name="codigo" placeholder="Ingrese codigo del producto">
             <input type="text" name="nombre" placeholder="Ingrese nombre del producto">
             <input type="text" name="precio" placeholder="Ingrese precio del producto">
             <input type="number" name="cantidad" placeholder="Ingrese cantidad del producto">
@@ -62,24 +71,31 @@
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
-                    <th>Marca</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
+                    <th>Categoria</th>
                 </tr>
             </thead>
+            
+            <?php while ($filas = mysqli_fetch_assoc($resultado)) {
+				# code...
+				?>
             <tbody class="table_tbody" id="tbody_carrito">
-                <td>A2</td>
-                <td>Television</td>
-                <td>Sony</td>
-                <td>10</td>
-                <td>123</td>
+                <td><?php echo $filas['idProducto']; ?></td>
+                <td><?php echo $filas['nombre']; ?></td>
+                <td><?php echo $filas['precio']; ?></td>
+                <td><?php echo $filas['cantidad']; ?></td>
+                <td><?php echo $filas['categoria']; ?></td>
             </tbody>
+				<?php } ?> 
+				<!-- Fin tarjeta -->
         </table>
         <button class="boton" id="btn_vaciar_carrito">Ver todos los productos</button>
     </div>
     <footer class="footer">
         <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
     </footer>
+    <script src="JS/menu.js"></script>
     <script src="JS/app.js"></script>
     <script src="JS/validarFormulario.js"></script>
 </body>

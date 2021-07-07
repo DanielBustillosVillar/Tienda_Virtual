@@ -333,6 +333,10 @@ body{
 .card a{
     text-decoration: none;
     color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
 }
 @media (min-width: 720px){
     .card figure img{
@@ -377,9 +381,7 @@ body{
 }
 @media (min-width: 1024px){
     .aside{
-        width: 30%;
-        margin: 0;
-        height: 952.125px;
+        display: none;
     }
     .contenedor{
         display: flex;

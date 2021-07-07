@@ -1,6 +1,4 @@
 /* =========== VARIABLES Y CONSTANTES ============*/
-const menu__movil = document.querySelector('#menu__movil')
-const navegacion = document.querySelector('#navegacion')
 
 const slider = document.querySelector('#banner_contenido')
 let sliderImg = document.querySelectorAll('#banner_contenido img')
@@ -9,10 +7,10 @@ let sliderImgLast = sliderImg[sliderImg.length - 1]
 
 /* =================== EVENTOS ============================= */
 
-menu__movil.addEventListener('click', salirMenu)
 
-
-slider.insertAdjacentElement('afterbegin', sliderImgLast)
+if(slider != null){
+    slider.insertAdjacentElement('afterbegin', sliderImgLast)
+}
 /* =================== SLIDER =================== */
 window.addEventListener('load', mover)
 
@@ -22,13 +20,6 @@ window.addEventListener('load', mover)
 
 function mover(){
     setInterval(moverDerecha, 3000)
-}
-function salirMenu(){
-    if(navegacion.classList.contains('left')){
-        navegacion.classList.remove('left')
-    }else{
-        navegacion.classList.add('left')
-    }
 }
 
 function moverDerecha(){
