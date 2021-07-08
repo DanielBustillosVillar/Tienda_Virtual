@@ -5,6 +5,10 @@
 	$resultado = mysqli_query($con,$sentencia);
 	mysqli_close($con);
     $archivo_actual = basename($_SERVER['PHP_SELF']);
+    session_start();
+    if(!isset($_SESSION['admin'])){
+        header("location:index.php");
+    }else{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +41,17 @@
                 <li><img src="imagenes/stereo.svg" alt="Audio" class="navegacion__icono"><a href="audio.php" class="link">Audio</a></li>
                 <li><img src="imagenes/computer.svg" alt="Computo" class="navegacion__icono"><a href="computo.php" class="link">Computo</a></li>
                 <li><img src="imagenes/homeless.svg" alt="Electrohogar" class="navegacion__icono"><a href="electrohogar.php" class="link">Electrohogar</a></li>
-                <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.html" class="link">Usuarios</a></li>
+                <?php 
+                if(!isset($_SESSION['admin'])){
+                ?><li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="login.php" class="link">Ingresar</a></li>
+                <?php
+                }else{
+                    ?> <li><img src="imagenes/user.svg" alt="Usuario" class="navegacion__icono"><a href="administrador.html" class="link">Administrar</a></li>
+                    <li><img src="imagenes/user.svg" alt="Salir" class="navegacion__icono"><a href="PHP/salir.php" class="link">Salir</a></li>
+
+                    <?php
+                }
+                ?>
             </ul>
         </nav>
     </header>
@@ -90,13 +104,15 @@
 				<?php } ?> 
 				<!-- Fin tarjeta -->
         </table>
-        <button class="boton" id="btn_vaciar_carrito">Ver todos los productos</button>
+        <a href="visualizarProductos.php" class="boton aboton">Ver todos los productos</a>
     </div>
     <footer class="footer">
         <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
     </footer>
     <script src="JS/menu.js"></script>
-    <script src="JS/app.js"></script>
     <script src="JS/validarFormulario.js"></script>
 </body>
 </html>
+    <?php 
+}
+?>

@@ -131,7 +131,6 @@
         <p>Copyright &copy; 2021 Daniel Bustillos Villar</p>
     </footer>
     <script src="JS/menu.js"></script>
-    <script src="JS/app.js"></script>
     <script src="JS/agregarProductos.js"></script>
 </body>
 </html>

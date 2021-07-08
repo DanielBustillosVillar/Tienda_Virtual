@@ -64,6 +64,11 @@ body{
 .formulario input::placeholder{
     color: #39B6E8;
 }
+.aboton{
+    text-decoration: none;
+    padding: 10px 60px;
+    display: block;
+}
 .boton{
     margin: 2% 12.5% 10%;
     width: 75%;

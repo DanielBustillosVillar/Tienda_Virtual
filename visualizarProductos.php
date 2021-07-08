@@ -1,6 +1,9 @@
 <?php
 	require_once "PHP/consultar.php";
     session_start();
+    if(!isset($_SESSION['admin'])){
+        header("location:index.php");
+    }else{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -173,3 +176,6 @@
     <script src="JS/agregarProductos.js"></script>
 </body>
 </html>
+    <?php 
+}
+?>
