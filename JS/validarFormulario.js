@@ -55,7 +55,7 @@ function validarLogin(e){
 function mostrarAlerta(mensaje, tipo){
         if(mensaje == 'Bienvenido'){
             alert('Bienvenido')
-            window.location.href = 'audio.php'
+            window.location.href = 'administrador.php'
         }
         if(alerta.classList.contains('alerta')){
 

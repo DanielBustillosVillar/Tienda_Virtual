@@ -1,0 +1,49 @@
+*{
+    background-color: #101F36;
+}
+.main{
+    max-width: 1000px;
+    margin: 0 20px;
+}
+@media (min-width: 1024px){
+    .main{
+        margin: auto;
+    }
+    
+}
+.tar{
+    margin: 50px 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+.p{
+    background: url(../imagenes/stock.png);
+}
+.u{
+    background: url(../imagenes/user.png);
+}
+.s{
+    background: url(../imagenes/exit.png);
+}
+.imagenA{
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.imagenA img{
+    height: inherit;
+}
+.textA{
+    color: #ffffff;
+    padding: 10px;
+    font-size: 1.5em;
+}
+.a{
+    text-decoration: none;
+}
+.a:hover .tar{
+    background-color: #0eb6f8;
+    box-shadow: 10px solid #000000;
+}
