@@ -23,6 +23,13 @@
                 <h3 class="textA">Usuarios</h3>
             </div>
         </a>
+        <a href="index.php" class="a exit">
+            <div class="tar">
+                <figure class="imagenA s">
+                </figure>
+                <h3 class="textA">Volver</h3>
+            </div>
+        </a>
         <a href="PHP/salir.php" class="a exit">
             <div class="tar">
                 <figure class="imagenA s">
