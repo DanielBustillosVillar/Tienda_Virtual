@@ -23,7 +23,7 @@
                 <h3 class="textA">Usuarios</h3>
             </div>
         </a>
-        <a href="visualizarProductos.php" class="a">
+        <a href="PHP/salir.php" class="a exit">
             <div class="tar">
                 <figure class="imagenA s">
                 </figure>
