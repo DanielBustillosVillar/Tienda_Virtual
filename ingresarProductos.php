@@ -4,6 +4,53 @@
 	$sentencia = "SELECT * FROM `productos`";
 	$resultado = mysqli_query($con,$sentencia);
 	mysqli_close($con);
+    $idProducto = '';
+    $nombre ='';
+    $precio = '';
+    $cantidad = '';
+    $descripcion = '';
+    $seleccionA = '';
+	$seleccionC = '';
+	$seleccionE = '';
+	$seleccionT = '';
+    $valor = 'Registrar';
+    if(isset($_POST['modificar'])){
+        require_once('PHP/conexion.php');
+        $con = conectar();
+        $idProducto = $_POST["idProducto"];
+        $buscar = "SELECT * FROM `productos` WHERE idProducto = '$idProducto'";
+        $respuesta = mysqli_query($con, $buscar);
+
+        while ($filas = mysqli_fetch_assoc($respuesta)) {
+            # code...
+            $idProducto = $filas['idProducto'];
+            $nombre = $filas['nombre'];
+            $precio = $filas['precio'];
+            $cantidad = $filas['cantidad'];
+            $descripcion = $filas['descripcion'];
+            $categoria = $filas['categoria'];
+        }
+
+        switch ($categoria) {
+			case 'television':
+				$seleccionT = 'selected';
+				break;
+			case 'audio':
+				$seleccionA = 'selected';
+				break;
+			case 'computo':
+				$seleccionC = 'selected';
+				break;
+			case 'electrohogar':
+				$seleccionE = 'selected';
+				break;
+			default:
+				# code...
+				break;
+		}
+        $valor = 'Modificar';
+        mysqli_close($con);
+    }
     $archivo_actual = basename($_SERVER['PHP_SELF']);
     session_start();
     if(!isset($_SESSION['admin'])){
@@ -59,21 +106,22 @@
         <form class="formulario form_productos" id="formulario">
             <h2>Ingresar Productos</h2>
             <input type="hidden" name="archivo_actual" value="<?php echo $archivo_actual; ?>">
-            <input type="number" name="codigo" placeholder="Ingrese codigo del producto">
-            <input type="text" name="nombre" placeholder="Ingrese nombre del producto">
-            <input type="text" name="precio" placeholder="Ingrese precio del producto">
-            <input type="number" name="cantidad" placeholder="Ingrese cantidad del producto">
-            <input type="text" name="descripcion" placeholder="Ingrese descripcion del producto">
+            <input type="number" name="codigo" value="<?php echo $idProducto; ?>" placeholder="Ingrese codigo del producto">
+            <input type="text" name="nombre" value="<?php echo $nombre; ?>" placeholder="Ingrese nombre del producto">
+            <input type="text" name="precio" value="<?php echo $precio; ?>" placeholder="Ingrese precio del producto">
+            <input type="number" name="cantidad" value="<?php echo $cantidad; ?>" placeholder="Ingrese cantidad del producto">
+            <input type="text" name="descripcion" value="<?php echo $descripcion; ?>" placeholder="Ingrese descripcion del producto">
             <select name="categoria" id="categoria">
                 <option selected hidden>Seleccione una categoria</option>
-                <option value="television">Televisión</option>
-                <option value="audio">Audio</option>
-                <option value="computo">Computo</option>
-                <option value="electrohogar">Electrohogar</option>
+                <option <?php echo $seleccionT ?> value="television">Televisión</option>
+                <option <?php echo $seleccionA ?> value="audio">Audio</option>
+                <option <?php echo $seleccionC ?> value="computo">Computo</option>
+                <option <?php echo $seleccionE ?> value="electrohogar">Electrohogar</option>
             </select>
             <label for="imagen_producto">Elegir imagen del producto</label>
             <input type="file" name="imagen" id="imagen_producto" placeholder="Ingrese imagen del producto">
-            <button class="boton mg-b" id="boton">Registrar producto</button>
+            <input type="hidden" name="valor" value="<?php echo $valor; ?>">
+            <button class="boton mg-b" id="boton"><?php echo $valor ?> producto</button>
         </form>
     </div>
     <div id="alerta">

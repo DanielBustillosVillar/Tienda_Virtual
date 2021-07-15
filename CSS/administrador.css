@@ -27,6 +27,9 @@
 .s{
     background: url(../imagenes/exit.png);
 }
+.b{
+    background: url(../imagenes/back.png);
+}
 .imagenA{
     height: 150px;
     background-repeat: no-repeat;

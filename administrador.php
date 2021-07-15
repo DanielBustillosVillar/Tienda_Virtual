@@ -23,9 +23,9 @@
                 <h3 class="textA">Usuarios</h3>
             </div>
         </a>
-        <a href="index.php" class="a exit">
+        <a href="index.php" class="a">
             <div class="tar">
-                <figure class="imagenA s">
+                <figure class="imagenA b">
                 </figure>
                 <h3 class="textA">Volver</h3>
             </div>

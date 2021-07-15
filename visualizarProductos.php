@@ -147,8 +147,11 @@
                 <p>Categoria <span><?php echo $filas['categoria']; ?></span></p>
                 <!-- <button class="boton" data-id="<?php echo $filas['idProducto']; ?>">Modificar</button> -->
                 <!-- <button class="boton btn_delete" data-id="<?php echo $filas['idProducto']; ?>">Eliminar</button> -->
-                <form action="PHP/eliminar.php" method="POST" name="submit" id="submit">
+                <form action="ingresarProductos.php" method="POST" name="submit" id="submit">
 					<td><input type="submit" id="modificar" name="modificar" class="boton" value="Modificar"></td>
+                    <input type="hidden" name="idProducto" id="idProducto" value="<?php echo $filas['idProducto']; ?>">
+                </form>
+                <form action="PHP/eliminar.php" method="POST" name="submit" id="submit">
 					<td><input type="submit" id="eliminarP" name="eliminarP"class="boton btn_delete" value="Eliminar"></td>
 					<input type="hidden" name="idProducto" id="idProducto" value="<?php echo $filas['idProducto']; ?>">
                 </form>

@@ -18,13 +18,20 @@ function validarFormulario(e){
     }else{
         let dato = new FormData(formulario)
 
-        fetch('./PHP/registrar.php', {
+        if(inputs[7].value === 'Registrar'){
+            $ruta = './PHP/registrar.php';
+            $type = '';
+        }else{
+            $ruta = './PHP/modificar.php';
+            $type = 'redirigir';
+        }
+        fetch($ruta, {
             method: 'POST',
             body: dato
         })
             .then(function(respuesta){
                 respuesta.json().then(function(data){
-                    mostrarAlerta(data)
+                    mostrarAlerta(data, $type)
                 })
             })
         formulario.reset()
@@ -57,6 +64,11 @@ function mostrarAlerta(mensaje, tipo){
             alert('Bienvenido')
             window.location.href = 'administrador.php'
         }
+        
+        if(tipo === 'redirigir'){
+            alert('Producto modificado')
+            window.location.href = 'visualizarProductos.php'
+        }
         if(alerta.classList.contains('alerta')){
 
         }else{
@@ -75,5 +87,6 @@ function mostrarAlerta(mensaje, tipo){
                 mensajeAlerta.remove()
                 alerta.classList.remove('alerta')
             },3000)
+
         }
 }
