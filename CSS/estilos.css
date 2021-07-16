@@ -80,6 +80,22 @@ body{
     border-radius: 20px;
     cursor: pointer;
 }
+.alerta{
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    margin: 15px auto;
+    padding: 10px 40px;
+    font-size: 15px;
+	background-color: #d82323;
+}
+.as{
+    text-decoration: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px 0;
+}
 .boton:hover{
     background-color: #0eb6f8; 
 }

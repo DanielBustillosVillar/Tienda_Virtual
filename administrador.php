@@ -16,7 +16,7 @@
                 <h3 class="textA">Productos</h3>
             </div>
         </a>
-        <a href="visualizarProductos.php" class="a">
+        <a href="usuarios.php" class="a">
             <div class="tar">
                 <figure class="imagenA u">
                 </figure>
